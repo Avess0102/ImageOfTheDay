@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Nav.css'
+import './Nav.css';
+require('dotenv').config();
 
 export class Navbar extends Component {
 
@@ -14,7 +15,7 @@ export class Navbar extends Component {
   }
 
   async updateImg() {
-    const url = `https://api.nasa.gov/planetary/apod?api_key=peY7pFdldcVYWhs05DGcyXoOjn6sa72Nvz3brfif&start_date=2022-06-01`;
+    const url = `{process.env.REACT_APP_APIURL}`;
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
