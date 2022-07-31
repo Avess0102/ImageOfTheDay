@@ -9,9 +9,7 @@ export class Navbar extends Component {
     this.state = {
       imgData: [],
       mImg: '',
-      explore: '',
     }
-    this.mainImg = this.mainImg.bind(this)
   }
 
   async updateImg() {
@@ -21,11 +19,8 @@ export class Navbar extends Component {
     this.setState({
       imgData: parsedData.reverse(),
       mImg: parsedData[0],
-      explore: 'explore',
     })
   }
-
-  mainImg() {};
   
   async componentDidMount() {
     this.updateImg();
